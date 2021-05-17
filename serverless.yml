@@ -1,0 +1,75 @@
+service: qs-backend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: ${opt:profile, 'freshqube-profile'}
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  environment:
+    SERVICE: ${self:service}
+    STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - ses:SendEmail
+        - ses:SendRawEmail
+      Resource:
+        - arn:aws:dynamodb:${self:provider.region}:*:*
+        - arn:aws:ses:${self:provider.region}:*:*
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-prune-plugin
+  - serverless-dynamodb-local
+  - serverless-offline
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  exclude:
+    - node_modules/typescript/**
+    - node_modules/@types/**
+
+functions:
+  api:
+    name: ${self:custom.prefix-name}
+    handler: apps/api/src/main-aws.handler
+    timeout: 30
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+    package:
+      include:
+        - dist/**
+    tags:
+      environment: ${self:provider.stage}
+
+custom:
+  prefix-name: ${self:service}-${self:provider.stage}
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 3
+  dynamodb:
+    stages:
+      - ${self:provider.stage}
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: false
+      sharedDb: true
+
+resources:
+  - ${file(resource/dynamodb.yml)}
