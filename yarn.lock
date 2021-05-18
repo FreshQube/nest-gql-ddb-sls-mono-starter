@@ -2826,7 +2826,7 @@ apollo-server-errors@^3.0.0-alpha.4:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-3.0.0-alpha.4.tgz#5561462802680ba4d2005438d09763d3c1fcc6d0"
   integrity sha512-0XymktZeThS6X1NhZwjrLq4v5S73IJX9XyjFyQa3nnxzGfHGwMNQb9pl7PE22QAMw45JMaGxRhCZXfYd6oVcRA==
 
-apollo-server-fastify@^3.0.0-alpha.3:
+apollo-server-fastify@^3.0.0-alpha.4:
   version "3.0.0-lambda.0"
   resolved "https://registry.yarnpkg.com/apollo-server-fastify/-/apollo-server-fastify-3.0.0-lambda.0.tgz#9dd311166db9731ab0505f0139b913e14fc740ca"
   integrity sha512-O+KTv59rob01HpeIDve4xmB7qEc6U1c9ZG9AKC6CnG+zOuxfDePo+UGVc/paLLjrrfh/oKcgxlk6vmhZ+bKvxg==
