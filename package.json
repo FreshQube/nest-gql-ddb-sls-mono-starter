@@ -98,8 +98,10 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "users/users/(.*)": "<rootDir>/libs/users/src/$1",
-      "users/users": "<rootDir>/libs/users/src"
+      "@libs/users/(.*)": "<rootDir>/libs/users/src/$1",
+      "@libs/users": "<rootDir>/libs/users/src",
+      "@libs/shared/(.*)": "<rootDir>/libs/shared/src/$1",
+      "@libs/shared": "<rootDir>/libs/shared/src"
     }
   },
   "lint-staged": {

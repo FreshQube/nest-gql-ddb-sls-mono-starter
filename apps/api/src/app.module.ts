@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { APIModule } from './modules/api.module';
 import { DynamooseModule } from 'nestjs-dynamoose';
 import { ConfigModule } from '@nestjs/config';
-
+import { UsersModule } from '@libs/users';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -34,7 +33,7 @@ import { ConfigModule } from '@nestjs/config';
         suffix: '-table',
       },
     }),
-    APIModule,
+    UsersModule,
   ],
 })
 export class AppModule {}

@@ -20,7 +20,21 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@libs/shared": [
+        "libs/shared/src"
+      ],
+      "@libs/shared/*": [
+        "libs/shared/src/*"
+      ],
+      "@libs/users": [
+        "libs/users/src"
+      ],
+      "@libs/users/*": [
+        "libs/users/src/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",
