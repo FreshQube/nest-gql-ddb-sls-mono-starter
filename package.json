@@ -79,6 +79,8 @@
     "typescript": "^4.2.3"
   },
   "jest": {
+    "testEnvironment": "jest-dynalite/environment",
+    "setupFilesAfterEnv": ["./jest-dynalite-setup.js"],
     "moduleFileExtensions": [
       "js",
       "json",
@@ -86,6 +88,7 @@
     ],
     "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
+    "testTimeout": 45000,
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
@@ -93,7 +96,6 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "./coverage",
-    "testEnvironment": "node",
     "roots": [
       "<rootDir>/apps/",
       "<rootDir>/libs/"

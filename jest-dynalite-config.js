@@ -1,7 +1,7 @@
 module.exports = {
   tables: [
     {
-      TableName: 'pl-saas-api-local-MainModel-table',
+      TableName: `${process.env.SERVICE}-local-MainModel-table`,
       KeySchema: [{ AttributeName: 'pk', KeyType: 'HASH' }],
       AttributeDefinitions: [
         { AttributeName: 'pk', AttributeType: 'S' },
