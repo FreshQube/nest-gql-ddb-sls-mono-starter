@@ -1,0 +1,58 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # OR "2" -> To retrieve the preceding commit.  
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - uses: luk-schweizer/jest-code-coverage-badge-action@v1.0.1
+        with:
+         kvaas-key-url: 'https://api.keyvalue.xyz/5ee49491/coverage'
+         
+# Run below steps when actually deploying somewhere adding it here as a reference
+
+#       - name: "Configure AWS Credentials"
+#         # You may pin to the exact commit or the version.
+#         # uses: aws-actions/configure-aws-credentials@0309c38ebd10f90dfbb3889431bcf4ea38088012
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           # AWS Access Key ID. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} # optional
+#           # AWS Secret Access Key. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # optional
+#           # AWS Region, e.g. us-east-2
+#           aws-region: us-east-1
+
+
+#       - run: npm install -g serverless@1.83.3
+
+#       - name: Run step while deploying
+#         run: |
+#           echo "deploying to sls"
+#           npm install
+#           npm run deploy
+
+      - run: echo "🍏 This workflow is completed."
