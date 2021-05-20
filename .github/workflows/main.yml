@@ -27,7 +27,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          
+
+      - name: Installing deps
+        run: npm install
+
       - uses: luk-schweizer/jest-code-coverage-badge-action@v1.0.1
         with:
          kvaas-key-url: 'https://api.keyvalue.xyz/5ee49491/coverage'
@@ -52,7 +55,6 @@ jobs:
 #       - name: Run step while deploying
 #         run: |
 #           echo "deploying to sls"
-#           npm install
 #           npm run deploy
 
       - run: echo "🍏 This workflow is completed."
