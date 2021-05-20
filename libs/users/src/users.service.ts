@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel, Model } from 'nestjs-dynamoose';
-import { CreateUserInput } from '../../shared/src/models/users/dto/create-user.input';
 import {
   KeyType,
   User,
   UserKey,
   UpdateUserInput,
   CountUserInput,
+  CreateUserInput,
 } from '@libs/shared';
 @Injectable()
 export class UsersService {

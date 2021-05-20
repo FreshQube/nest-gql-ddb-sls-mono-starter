@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
+// TODO: Use base graphql package once issue #1536 is resolved and PR #1544 is merged
+// TODO: Once PR is merged remove the patch dependency
+// import { GraphQLModule } from '@nestjs/graphql';
+import { GraphQLModule } from '@nestjs/graphql-patch';
 import { DynamooseModule } from 'nestjs-dynamoose';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from '@libs/users';

@@ -1647,6 +1647,27 @@
     tslib "2.1.0"
     uuid "8.3.2"
 
+"@nestjs/graphql-patch@https://github.com/maazkabir/graphql.git#fastify-fix-package":
+  version "7.10.6"
+  resolved "https://github.com/maazkabir/graphql.git#380be2f9961b98e970849e329a4a74034026ae46"
+  dependencies:
+    "@graphql-tools/merge" "6.2.12"
+    "@graphql-tools/schema" "7.1.3"
+    "@graphql-tools/utils" "7.7.3"
+    "@nestjs/mapped-types" "0.4.1"
+    apollo-env "0.6.6"
+    chokidar "3.5.1"
+    fast-glob "3.2.5"
+    iterall "1.3.0"
+    lodash "4.17.21"
+    normalize-path "3.0.0"
+    tslib "2.2.0"
+    uuid "8.3.2"
+  optionalDependencies:
+    "@apollo/gateway" "^0.26.0"
+    apollo-server-testing "^2.21.1"
+    ts-morph "^10.0.1"
+
 "@nestjs/graphql@^7.10.6":
   version "7.10.6"
   resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.10.6.tgz#e56e1b84d52b38a07118a602d3773b805582ded3"
@@ -1685,18 +1706,18 @@
     multer "1.4.2"
     tslib "2.1.0"
 
-"@nestjs/platform-fastify@^7.6.15":
-  version "7.6.15"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.15.tgz#f0faa25e77a566f0d4eb99ebe3c39aa95360b1c6"
-  integrity sha512-WwtVaIKw3+5zSCANr3oquPbwwd1yEhpSMwPzLj9TZLwQ0KusqT+dH6xNYOQV9Gk8M/ZjubPxZCeIIuTRirHwBg==
+"@nestjs/platform-fastify@^7.6.17":
+  version "7.6.17"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.17.tgz#19a03bb969a31db91b5685a3d278a00adcb379dd"
+  integrity sha512-948eWtSrWcOfxK5pvi1lw6GCn/nr2BKWiM49qz+pnrLdKVd9n8y5t9EbOQcLmtaFZWHoLq/tNE0uqVio8ANHjg==
   dependencies:
     fastify "3.14.0"
-    fastify-cors "5.2.0"
+    fastify-cors "6.0.1"
     fastify-formbody "5.0.0"
     light-my-request "4.4.1"
     middie "5.2.0"
     path-to-regexp "3.2.0"
-    tslib "2.1.0"
+    tslib "2.2.0"
 
 "@nestjs/schematics@^7.3.0":
   version "7.3.1"
@@ -2749,10 +2770,10 @@ apollo-server-caching@^0.7.0:
   dependencies:
     lru-cache "^6.0.0"
 
-apollo-server-core@^2.23.0, apollo-server-core@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.24.0.tgz#60313e5bd265422d53fe0ffbd45760046465f5f0"
-  integrity sha512-uW7gykPzhin9fLgSvciN8tX7098mHnUM79W3+fWfK5J415JidIqW9O+JhYmEPo6BCgosu0cKSdYe7NB+FP4lFQ==
+apollo-server-core@^2.23.0, apollo-server-core@^2.24.1:
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.24.1.tgz#304d265f6033f6b91d880b8498fcc75d72dead40"
+  integrity sha512-+T7G2EsC5N/AVo0QJo13r1kFgJk0HTK55YlXbnpJl6qRUF8yKLXMittvIfTWge0uLQGzFzVRhDZ7AQMt/E1TGA==
   dependencies:
     "@apollographql/apollo-tools" "^0.5.0"
     "@apollographql/graphql-playground-html" "1.6.27"
@@ -2826,7 +2847,7 @@ apollo-server-errors@^3.0.0-alpha.4:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-3.0.0-alpha.4.tgz#5561462802680ba4d2005438d09763d3c1fcc6d0"
   integrity sha512-0XymktZeThS6X1NhZwjrLq4v5S73IJX9XyjFyQa3nnxzGfHGwMNQb9pl7PE22QAMw45JMaGxRhCZXfYd6oVcRA==
 
-apollo-server-fastify@^3.0.0-alpha.4:
+apollo-server-fastify@^3.0.0-alpha.3:
   version "3.0.0-lambda.0"
   resolved "https://registry.yarnpkg.com/apollo-server-fastify/-/apollo-server-fastify-3.0.0-lambda.0.tgz#9dd311166db9731ab0505f0139b913e14fc740ca"
   integrity sha512-O+KTv59rob01HpeIDve4xmB7qEc6U1c9ZG9AKC6CnG+zOuxfDePo+UGVc/paLLjrrfh/oKcgxlk6vmhZ+bKvxg==
@@ -2852,11 +2873,11 @@ apollo-server-plugin-base@^0.300.0-lambda.0:
     apollo-server-types "^0.300.0-lambda.0"
 
 apollo-server-testing@^2.21.1:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-testing/-/apollo-server-testing-2.24.0.tgz#03e4ed047cdda0fcea6892643b12abed1fbe4465"
-  integrity sha512-GmNO624c65XH2iaPKWG/yQg8fx1ZJIfnl86W1RgL9AV00SXJZu53OP0A6cbDyYvKBZj5Fl3czaPyNR/4YG5Lrg==
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-testing/-/apollo-server-testing-2.24.1.tgz#6ba2a69967479d4c9a05e0a245f0d1a81a392ce2"
+  integrity sha512-3aWJp1ybpvSn1etakUWBCK1xeUEDykKMVLFguqPeNmAgr/qGA9ccS4MUHol++/cXUDCtXJ6WAShqW/8QTeKzoQ==
   dependencies:
-    apollo-server-core "^2.24.0"
+    apollo-server-core "^2.24.1"
 
 apollo-server-types@^0.300.0-lambda.0:
   version "0.300.0-lambda.0"
@@ -2949,11 +2970,6 @@ arr-union@^3.1.0:
   resolved "https://registry.yarnpkg.com/arr-union/-/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
   integrity sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ=
 
-array-filter@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/array-filter/-/array-filter-1.0.0.tgz#baf79e62e6ef4c2a4c0b831232daffec251f9d83"
-  integrity sha1-uveeYubvTCpMC4MSMtr/7CUfnYM=
-
 array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
@@ -2980,6 +2996,17 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
+
+array.prototype.filter@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array.prototype.filter/-/array.prototype.filter-1.0.0.tgz#24d63e38983cdc6bf023a3c574b2f2a3f384c301"
+  integrity sha512-TfO1gz+tLm+Bswq0FBOXPqAchtCr2Rn48T8dLJoRFl8NoEosjZmzptmuo1X8aZBzZcqsR1W8U761tjACJtngTQ==
+  dependencies:
+    call-bind "^1.0.2"
+    define-properties "^1.1.3"
+    es-abstract "^1.18.0"
+    es-array-method-boxes-properly "^1.0.0"
+    is-string "^1.0.5"
 
 asap@~2.0.3:
   version "2.0.6"
@@ -3053,11 +3080,11 @@ atomic-sleep@^1.0.0:
   integrity sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==
 
 available-typed-arrays@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.2.tgz#6b098ca9d8039079ee3f77f7b783c4480ba513f5"
-  integrity sha512-XWX3OX8Onv97LMk/ftVyBibpGwY5a8SmuxZPzeOxqmuEqUCOM9ZE+uIaD1VNJ5QnvU2UQusvmKbuM1FR8QWGfQ==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.3.tgz#fb7d02445bfedefad79fad1fe47931163a227198"
+  integrity sha512-CuPhFULixV/d89POo1UG4GqGbR7dmrefY2ZdmsYakeR4gOSJXoF7tfeaiqMHGOMrlTiJoeEs87fpLsBYmE2BMw==
   dependencies:
-    array-filter "^1.0.0"
+    array.prototype.filter "^1.0.0"
 
 avvio@^7.1.2:
   version "7.2.2"
@@ -3428,9 +3455,9 @@ bytes@3.1.0:
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
 cacache@^15.0.5:
-  version "15.0.6"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-15.0.6.tgz#65a8c580fda15b59150fb76bf3f3a8e45d583099"
-  integrity sha512-g1WYDMct/jzW+JdWEyjaX2zoBkZ6ZT9VpOyp2I/VMtDsNLffNat3kqPFfi1eDRSK9/SuKGyORDHcQMcPF8sQ/w==
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-15.1.0.tgz#164c2f857ee606e4cc793c63018fefd0ea5eba7b"
+  integrity sha512-mfx0C+mCfWjD1PnwQ9yaOrwG1ou9FkKnx0SvzUHWdFt7r7GaRtzT+9M8HAvLu62zIHtnpQ/1m93nWNDCckJGXQ==
   dependencies:
     "@npmcli/move-file" "^1.0.1"
     chownr "^2.0.0"
@@ -4448,7 +4475,7 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-es-abstract@^1.18.0-next.1, es-abstract@^1.18.0-next.2:
+es-abstract@^1.18.0, es-abstract@^1.18.0-next.1, es-abstract@^1.18.0-next.2:
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.18.0.tgz#ab80b359eecb7ede4c298000390bc5ac3ec7b5a4"
   integrity sha512-LJzK7MrQa8TS0ja2w3YNLzUgJCGPdPOV1yVvezjNnS89D+VR08+Szt2mz3YB2Dck/+w5tfIq/RoUAFqJJGM2yw==
@@ -4469,6 +4496,11 @@ es-abstract@^1.18.0-next.1, es-abstract@^1.18.0-next.2:
     string.prototype.trimend "^1.0.4"
     string.prototype.trimstart "^1.0.4"
     unbox-primitive "^1.0.0"
+
+es-array-method-boxes-properly@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/es-array-method-boxes-properly/-/es-array-method-boxes-properly-1.0.0.tgz#873f3e84418de4ee19c5be752990b2e44718d09e"
+  integrity sha512-wd6JXUmyHmt8T5a2xreUwKcGPq6f1f+WwIJkijUqiGcJz1qqnZgP6XIK+QyIWU5lT7imeNxUll48bziG+TSYcA==
 
 es-get-iterator@^1.1.1:
   version "1.1.2"
@@ -4937,15 +4969,7 @@ fastify-accepts@^2.0.1:
     accepts "^1.3.5"
     fastify-plugin "^2.0.0"
 
-fastify-cors@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-5.2.0.tgz#a92af64d9b7df1cd736c90ecd894a7b23c0cd75a"
-  integrity sha512-Lde71qT23M3Ip3pmny3uN6q6lQ4J5J0/YWoqe2stL4sMT99R5LEtTJ2La2zijFOR5OFhxvxqGgR7BIc2x3amPg==
-  dependencies:
-    fastify-plugin "^3.0.0"
-    vary "^1.1.2"
-
-fastify-cors@^6.0.0:
+fastify-cors@6.0.1, fastify-cors@^6.0.0:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/fastify-cors/-/fastify-cors-6.0.1.tgz#300e0f1cbeedda19d9de284e9cf05c65842c182b"
   integrity sha512-eeNTdQNmBsqHL87we+X74n9+H0hTDX0cXGVdyZjGf9om2pZfigAZwuSxaUUE2pLP9tp5+rEd5kejKQ8+ZCvAoA==
