@@ -1,9 +1,9 @@
-service: qs-backend
+service: backend
 
 provider:
   name: aws
   runtime: nodejs12.x
-  profile: ${opt:profile, 'freshqube-profile'}
+  profile: ${opt:profile, 'default'}
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   environment:
