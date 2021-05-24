@@ -27,7 +27,8 @@ provider:
         - arn:aws:ses:${self:provider.region}:*:*
 
 plugins:
-  - serverless-plugin-typescript
+  # - serverless-plugin-typescript
+  - serverless-webpack
   - serverless-prune-plugin
   - serverless-dynamodb-local
   - serverless-offline
@@ -70,6 +71,14 @@ custom:
       migrate: true
       seed: false
       sharedDb: true
+  webpack:
+    webpackConfig: './sls-webpack.config.js'
+    # includeModules:
+    # packagePath: './package.json' # relative path to custom package.json file.
+    # Name of webpack configuration file
+    # includeModules: true # Node modules configuration for packaging
+    # packager: 'yarn' # Packager that will be used to package your external modules
+  # excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
 
 resources:
   - ${file(resource/dynamodb.yml)}
